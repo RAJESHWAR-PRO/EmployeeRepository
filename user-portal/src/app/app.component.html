@@ -1,0 +1,51 @@
+  <!-- <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+  <div *ngIf="editEmployee">
+  <edit-Employee></edit-Employee>
+  </div>
+<div>
+<table class="table table-hover" cellpadding=5 cellspacing=5>
+    <tr>
+        <th ng-click="orderAs('sno')">S.No</th>
+        <th>Created Date</th>
+        <th>Updated Date</th>
+        <th ng-click="orderAs('name')">Names</th>
+        <th ng-click="orderAs('country')">Address</th>
+        <th>Salary</th>
+        <th>Marital Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+  <tr *ngFor="let employee of empl">
+    <td>{{ employee.id }}</td>
+    <td>{{ employee.createdAt | date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+    <td>{{ employee.updatedAt | date : 'yyyy-MM-dd hh:mm:ss'}}</td>
+    <td>{{ employee.empName }}</td>
+    <td>{{ employee.empAddress }}</td>
+    <td>{{ employee.empSalary }}</td>
+    <td>{{ employee.maritalStatus }}</td>
+    <td><button class="btn btn-success" (click)="edit(employee)"> Edit</button></td>
+    <td><button class="btn btn-danger" (click)="deleteUser(employee)"> Delete</button></td>
+  </tr>
+</table>
+</div>
+</body>
+<style>
+  table{
+    margin-top: 20px;
+  }
+  tr:hover{
+    background-color:#eee;
+  }
+th,td{ 
+width: 150px; 
+text-align: center; 
+border-bottom:1px  solid rgb(129, 69, 69); 
+padding: 5px;
+}
+</style> -->
+<router-outlet></router-outlet>

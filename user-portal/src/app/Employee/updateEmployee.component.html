@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Updating the profile of {{data.id}}</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)] = "data.empName" placeholder="Employee Name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)] = "data.empAddress" placeholder="Employee Address" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)] = "data.empSalary" placeholder="Employee Salary" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="data.maritalStatus" name="maritalStatus" required>
+        <mat-option value="YES">Yes</mat-option>
+        <mat-option value="NO">No</mat-option>
+    </mat-select>
+   </mat-form-field>   
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-raised-button color="warn" (click)="onNoClick()">No, Thanks</button>
+  <button mat-button mat-raised-button color="primary" type="submit" cdkFocusInitial (click)="onSubmit(data)">Save</button>
+</div>
+<style>
+  mat-form-field{
+    margin-left: 1%;
+  }
+</style>

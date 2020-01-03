@@ -1,0 +1,25 @@
+<form class="example-form" style="margin: 0 auto;">
+    <h1 style="font-family: monospace;">Create Employee</h1>
+    <mat-form-field class="example-full-width">
+      <input matInput cdkFocusInitial minlength="1" placeholder="Employee Name" (value)="empName" (input)="empName" [(ngModel)]="empl.empName" name="empName" required/>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput minlength="1" placeholder="Employee Address" (input)="empAddress" (value)="empAddress" [(ngModel)]="empl.empAddress" name="empAddress" required/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+       <input matInput minlength="1" placeholder="Salary" (input)="empSalary" (value)="empSalary" [(ngModel)]="empl.empSalary" name="empSalary" required/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="empl.maritalStatus" name="maritalStatus" required>
+            <mat-option value="YES">Yes</mat-option>
+            <mat-option value="NO">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" (click)="createEmployee()">Save</button>
+    <button mat-raised-button color="warn" type="reset" style="margin-left: 10px;">Clear</button>
+</form>

@@ -9,7 +9,7 @@ xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/
 	    <version>1.5.9.RELEASE</version>  
 	</parent>  
 	<groupId>com.example</groupId>
-	<artifactId>Credential31</artifactId>
+	<artifactId>Employee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HibernateEmp</name>
 	<description>Demo project for Spring Boot</description>

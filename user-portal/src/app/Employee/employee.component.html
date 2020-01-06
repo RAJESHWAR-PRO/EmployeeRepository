@@ -21,49 +21,49 @@
     <!-- CreatedAt Column  -->
     <ng-container matColumnDef="createdAt">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="createdAt" scope="col"> CreatedAt </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.createdAt | date : 'yyyy-MM-dd hh:mm:ss'}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.createdAt | date : 'yyyy-MM-dd hh:mm:ss'}} </td>
     </ng-container>
 
     <!-- UpdatedAt Column  -->
     <ng-container matColumnDef="updatedAt">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="updatedAt" scope="col"> UpdatedAt </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.updatedAt | date : 'yyyy-MM-dd hh:mm:ss'}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.updatedAt | date : 'yyyy-MM-dd hh:mm:ss'}} </td>
     </ng-container>
 
     <!-- id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="id" scope="col"> Id </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.id}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.id}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="empName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="empName" scope="col"> Name </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.empName}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.empName}} </td>
     </ng-container>
 
     <!-- Address Column -->
     <ng-container matColumnDef="empAddress">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="empAddress" scope="col"> Address </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.empAddress}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.empAddress}} </td>
     </ng-container>
 
     <!-- Salary Column -->
     <ng-container matColumnDef="empSalary">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="empSalary" scope="col"> Salary </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.empSalary}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.empSalary}} </td>
     </ng-container>
 
     <!-- maritalstatus Column -->
     <ng-container matColumnDef="maritalStatus">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="maritalStatus" scope="col"> MaritalStatus </th>
-      <td mat-cell *matCellDef="let employ" scope="row"> {{employ.maritalStatus}} </td>
+      <td mat-cell *matCellDef="let employ"> {{employ.maritalStatus}} </td>
     </ng-container>
 
     <!-- Edit column  -->
     <ng-container matColumnDef="Edit">
       <th mat-header-cell *matHeaderCellDef scope="col">Edit</th>
-      <td mat-cell *matCellDef="let employ" scope="row">
+      <td mat-cell *matCellDef="let employ">
         <button mat-icon-button class="btn btn-success" (click)="edit(employ)" color="primary"> 
           <mat-icon aria-label="Edit icon">edit</mat-icon>
         </button>
@@ -73,7 +73,7 @@
     <!-- Delete Column  -->
     <ng-container matColumnDef="Delete">
       <th mat-header-cell *matHeaderCellDef scope="col">Delete</th>
-      <td mat-cell *matCellDef="let employ" scope="row">
+      <td mat-cell *matCellDef="let employ">
         <button mat-icon-button (click)="deleteEmployee(employ)" color="warn">
           <mat-icon aria-label="Delete icon">delete</mat-icon>
         </button>

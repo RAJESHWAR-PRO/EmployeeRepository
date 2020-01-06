@@ -78,7 +78,6 @@ export class EmployeeComponent implements OnInit{
       length: this.paginator.length
       });
     }
-    else if(pageNumber == 0){}
     else{
       this.snackBar.open("Enter a valid page number from 1 to "+Math.ceil((this.paginator.length)/(this.paginator.pageSize)));
       setTimeout(() => {

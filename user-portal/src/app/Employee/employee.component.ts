@@ -77,7 +77,6 @@ export class EmployeeComponent implements OnInit{
       pageSize: this.paginator.pageSize,
       length: this.paginator.length
       });
-      pageNumber=0;
     }
     else if(pageNumber == 0){}
     else{
@@ -85,7 +84,6 @@ export class EmployeeComponent implements OnInit{
       setTimeout(() => {
         this.snackBar.dismiss();
       }, 3000);
-      pageNumber=0;
     }
   }
   applyFilter(filterValue: string) {
@@ -103,11 +101,6 @@ export class EmployeeComponent implements OnInit{
     }
     else if(this.type == "by Id")
     {
-      this.dataSource.filterPredicate = (data: Employee, filter: string) =>
-       data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
-       this.dataSource.filter = filterValue;
-    }
-    else{
       this.dataSource.filterPredicate = (data: Employee, filter: string) =>
        data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
        this.dataSource.filter = filterValue;

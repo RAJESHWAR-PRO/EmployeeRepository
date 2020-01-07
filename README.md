@@ -20,3 +20,6 @@ Steps to be taken care:
 2) Update your maven project.
 3) Run the EmployeeMain.java file Right click -> Run as -> Java Application.
 
+Note: If the angular project is cloned. Run these commands in your project
+1) npm update
+2) npm install tslib (or) npm i

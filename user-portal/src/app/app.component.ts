@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AppService} from './app.service';
 import { Router } from '@angular/router';
 import { Employee } from './Model/employee.model';
+import { EmployeeService } from './Employee/employee.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { Employee } from './Model/employee.model';
 export class AppComponent implements OnInit{
   empl : Employee[];
   editEmployee : boolean=false;
-  constructor(private router:Router, private appService:AppService){
+  constructor(private router:Router, private appService:EmployeeService){
 
   }
   ngOnInit(): void {

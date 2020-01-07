@@ -4,11 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEmployeeComponent } from './Update/addEmployee.component';
 import { HomePageComponent } from './Homepage/homepage.component';
-import { HomePageService } from './Homepage/homepage.service';
 import { EmployeeService } from './Employee/employee.service';
 import { MaterialModule } from './Model/materialModule';
 import { MatSortModule } from '@angular/material/sort';
@@ -33,7 +31,7 @@ import { EmployeeComponent } from './Employee/employee.component';
     BrowserAnimationsModule
   ],
   entryComponents: [UpdateEmployee],
-  providers: [AppService,HomePageService,EmployeeService],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -85,9 +85,9 @@ xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
+	          <artifactId>maven-surefire-plugin</artifactId>
+	          <version>2.22.1</version>
+	        </plugin>
 		</plugins>
 	</build>
 

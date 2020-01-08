@@ -9,6 +9,7 @@ import { EmployeeService } from './Employee/employee.service';
 })
 
 export class AppComponent implements OnInit{
+  title = 'angular';
   empl : Employee[];
   editEmployee : boolean=false;
   constructor(private router:Router, private appService:EmployeeService){
@@ -23,5 +24,4 @@ export class AppComponent implements OnInit{
   edit(employee):void{
     this.editEmployee = true;
   }
-  title = 'angular';
 }

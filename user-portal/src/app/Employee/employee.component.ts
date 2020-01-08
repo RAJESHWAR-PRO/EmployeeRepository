@@ -36,6 +36,7 @@ export class EmployeeComponent implements OnInit{
   jumpToMaxPageNumber: number=1;
   rowSize: number = 5;
   maxPageSize: number=1;
+  filterInput: boolean = false;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort,{static:true}) sort1:MatSort;
 
@@ -89,27 +90,25 @@ export class EmployeeComponent implements OnInit{
     switch(this.type)
     {
       case "by Name":
+        this.filterInput = true;
         this.dataSource.filterPredicate = (data: Employee, filter: string) =>
         data.empName.trim().toLowerCase().indexOf(filter) != -1;
         this.dataSource.filter = filterValue.trim().toLowerCase();
       break;
 
       case "by Address":
+        this.filterInput = true;
         this.dataSource.filterPredicate = (data: Employee, filter: string) =>
         data.empAddress.trim().toLowerCase().indexOf(filter) != -1;
         this.dataSource.filter = filterValue.trim().toLowerCase();
       break;
       
       case "by Id":
+        this.filterInput = true;
         this.dataSource.filterPredicate = (data: Employee, filter: string) =>
         data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
         this.dataSource.filter = filterValue;
       break;
-
-      default:
-        this.dataSource.filterPredicate = (data: Employee, filter: string) =>
-        data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
-        this.dataSource.filter = filterValue;
     }
   }
   

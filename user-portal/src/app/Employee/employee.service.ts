@@ -24,7 +24,7 @@ export class EmployeeService {
   }
 
   public deleteEmployee(employee) {
-    return this.http.delete(this.emplUrl + "/"+ employee.id);
+    return this.http.delete(this.emplUrl+"/"+employee.id);
   }
 
   public createEmployee(employee) {

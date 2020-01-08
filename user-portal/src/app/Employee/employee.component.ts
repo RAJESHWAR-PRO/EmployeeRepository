@@ -86,23 +86,30 @@ export class EmployeeComponent implements OnInit{
     }
   }
   applyFilter(filterValue: string) {
-    if(this.type == "by Name")
+    switch(this.type)
     {
-      this.dataSource.filterPredicate = (data: Employee, filter: string) =>
-      data.empName.trim().toLowerCase().indexOf(filter) != -1;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
-    else if(this.type == "by Address")
-    {
-      this.dataSource.filterPredicate = (data: Employee, filter: string) =>
-      data.empAddress.trim().toLowerCase().indexOf(filter) != -1;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
-    else if(this.type == "by Id")
-    {
-      this.dataSource.filterPredicate = (data: Employee, filter: string) =>
-       data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
-       this.dataSource.filter = filterValue;
+      case "by Name":
+        this.dataSource.filterPredicate = (data: Employee, filter: string) =>
+        data.empName.trim().toLowerCase().indexOf(filter) != -1;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+      break;
+
+      case "by Address":
+        this.dataSource.filterPredicate = (data: Employee, filter: string) =>
+        data.empAddress.trim().toLowerCase().indexOf(filter) != -1;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+      break;
+      
+      case "by Id":
+        this.dataSource.filterPredicate = (data: Employee, filter: string) =>
+        data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
+        this.dataSource.filter = filterValue;
+      break;
+
+      default:
+        this.dataSource.filterPredicate = (data: Employee, filter: string) =>
+        data.id.toString().trim().toLowerCase().indexOf(filter) != -1;
+        this.dataSource.filter = filterValue;
     }
   }
   

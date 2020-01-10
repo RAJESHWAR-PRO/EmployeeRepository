@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HomePageComponent } from './homepage.component';
 import { assertPlatform } from '@angular/core';
@@ -56,8 +56,9 @@ describe('HomeComponent', () => {
     it('should display create employee form at start', () => {
         const fixture = TestBed.createComponent(HomePageComponent);
         const compiled = fixture.debugElement;
-        compiled.queryAll(By.css('mat-tab'))[0];
-        compiled.nativeElement.click();
+        // let tab = compiled.queryAll(By.css('mat-tab'))[0];
+        // tab.nativeElement;
+        // tab.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           compiled.query(By.css('add-employee'));
@@ -68,8 +69,8 @@ describe('HomeComponent', () => {
     it('should display employee list after clicking second tab', () => {
         const fixture = TestBed.createComponent(HomePageComponent);
         const compiled = fixture.debugElement;
-        compiled.queryAll(By.css('mat-tab'))[1];
-        compiled.nativeElement.click();
+        // let tab = compiled.queryAll(By.css('mat-tab'))[1];
+        // tab[1].click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           compiled.query(By.css('employee-root'));

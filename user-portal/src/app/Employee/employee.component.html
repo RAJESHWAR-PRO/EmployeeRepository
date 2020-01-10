@@ -1,7 +1,7 @@
 <mat-form-field style="margin:1% 1% 1% 25%" id="dtBasicExample">
    <mat-label>Filter by </mat-label>
     <mat-select (selectionChange)="type=$event.value" [(ngModel)]="defaultSelected" [(value)]="selected" (click)="applyFilter('')" required>
-      <mat-option value="by Id">Employee Id</mat-option>
+      <mat-option value="by Id" class="empId">Employee Id</mat-option>
       <mat-option value="by Name">Employee Name</mat-option>
       <mat-option value="by Address">Employee Address</mat-option>
     </mat-select>
@@ -17,7 +17,7 @@
 </mat-form-field>
 <div class="mat-elevation-z8" style="margin: 1% 1% 1% 1%;">
   <table mat-table [dataSource]="dataSource" style="width: 100%;"  matSort>
-    <caption>Employee Details</caption>
+    <caption hidden>Employee Details</caption>
     <!-- CreatedAt Column  -->
     <ng-container matColumnDef="createdAt">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="createdAt" scope="col"> CreatedAt </th>

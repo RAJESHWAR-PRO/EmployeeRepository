@@ -13,8 +13,8 @@ export class EmployeeService {
   private router:Router;
   constructor(private http:HttpClient) {}
 
-  private emplUrl = 'http://localhost:8099/employee';
-  //private userUrl = '/api';
+  public emplUrl = 'http://localhost:8099/employee';
+  public empUpdate = `${this.emplUrl}/update/`;
 
   public updateEmployee(employee){
     return this.http.put<Employee[]>(this.emplUrl+"/update/"+employee.id,employee);
@@ -24,7 +24,7 @@ export class EmployeeService {
   }
 
   public deleteEmployee(employee) {
-    return this.http.delete(this.emplUrl+"/"+employee.id);
+    return this.http.delete<Employee>(this.emplUrl+"/"+employee.id);
   }
 
   public createEmployee(employee) {

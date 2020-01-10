@@ -1,41 +1,8 @@
 <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
-  <mat-tab label="Create Employee" (click)="createEmp()" style="color:red">
-    <div *ngIf="createEmployee">
+  <mat-tab label="Create Employee">
       <add-employee></add-employee>
-    </div> 
   </mat-tab>
-  <mat-tab label="List Employee" (click)="emplist()"> 
-    <div *ngIf="listEmployee">
+  <mat-tab label="List Employee"> 
        <employee-root></employee-root>
-    </div>
   </mat-tab>
 </mat-tab-group>
-<style>
-  .button1{
-    width: initial;
-    height: inherit;
-    color: black;
-    border: 2px solid black;
-    font-family: monospace;
-    font-size: 20px;
-    background-color: inherit;
-  }
-  .button2{
-    width: initial;
-    height: inherit;
-    color: black;
-    border: 2px solid black;
-    font-family: monospace;
-    font-size: 20px;
-    background-color: inherit;
-    margin-left: 10px;
-  }
-  .div1{
-    background-color: blueviolet;
-    width: 99%;
-    height: 50px;
-    margin-top: 10px;
-    margin-right: 5px;
-    margin-left: 10px;
-  }
-</style>

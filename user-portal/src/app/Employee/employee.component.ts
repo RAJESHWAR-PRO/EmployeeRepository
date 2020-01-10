@@ -19,7 +19,7 @@ import { MatSnackBar } from '@angular/material';
 })
 
 export class EmployeeComponent implements OnInit{
-  empl : Employee[];
+  // empl : Employee[];
   updateEmpl : Employee = new Employee();
   editEmployee : boolean=false;
   confirmation : boolean = false;
@@ -40,6 +40,32 @@ export class EmployeeComponent implements OnInit{
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort,{static:true}) sort1:MatSort;
 
+  empl :Employee[] = [
+    {
+      id:1, 
+      empName:'Rajeshwar', 
+      empAddress:'Hyderabad', 
+      empSalary:890000, 
+      maritalStatus:'NO', 
+      createdAt: new Date(2019,1,1,0,0,0), 
+      updatedAt:new Date(2020,1,1,1,1,1)
+    },
+    {
+      id:2, 
+      empName:'Rajeshwar', 
+      empAddress:'Hyderabad', 
+      empSalary:890000, 
+      maritalStatus:'NO', 
+      createdAt: new Date(2019,1,1,0,0,0), 
+      updatedAt:new Date(2020,1,1,1,1,1)
+    },      
+  ]
+  constructor(private router:Router, private emplService:EmployeeService, private dialog:MatDialog, private snackBar:MatSnackBar){
+    this.ngOnInit();
+    this.dataSource = new MatTableDataSource<Employee>(this.empl);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort1;
+  }
   ngOnInit(): void {
     this.emplService.getEmployees()
     .subscribe(data => {
@@ -112,9 +138,6 @@ export class EmployeeComponent implements OnInit{
     }
   }
   
-  constructor(private router:Router, private emplService:EmployeeService, private dialog:MatDialog, private snackBar:MatSnackBar){
-    this.ngOnInit();
-  }
 
   edit(employee):void{
     this.emplService.findById(employee.id)

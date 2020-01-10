@@ -98,50 +98,6 @@ describe('EmployeeComponent', () => {
     let httpRequest = httpMock.expectOne(empService.emplUrl);
     expect(httpRequest.request.method).toBe("POST");
     httpRequest.flush(dummyEmployees);
-  });
-
-  // it('it should update the employee',()=>{
-  //   let dummyEmployees: Employee[] = [
-  //     {
-  //       id:1, 
-  //       empName:'Rajeshwar', 
-  //       empAddress:'Hyderabad', 
-  //       empSalary:890000, 
-  //       maritalStatus:'NO', 
-  //       createdAt: new Date(2019/1/1), 
-  //       updatedAt:new Date(2020/1/2)
-  //     }
-  //   ]
-
-  //   empService.updateEmployee(dummyEmployees).subscribe(data => {
-  //     expect(data.length).toBe(1);
-  //     // expect(data).toEqual(dummyEmployees);
-  //   })
-
-  //   let httpRequest = httpMock.expectOne(empService.emplUrl+"/update/"+1);
-  //   expect(httpRequest.request.method).toBe("PUT");
-  //   httpRequest.flush(dummyEmployees);
-  // });
-  // it('it should Delete the employee',()=>{
-  //   let dummyEmployees: Employee[] = [
-  //     {
-  //       id:1, 
-  //       empName:'Rajeshwar', 
-  //       empAddress:'Hyderabad', 
-  //       empSalary:890000, 
-  //       maritalStatus:'NO', 
-  //       createdAt: new Date(2019/1/1), 
-  //       updatedAt:new Date(2020/1/2)
-  //     }
-  //   ]
-  //   empService.deleteEmployee(dummyEmployees).subscribe(data => {
-  //     expect(data).toBeTruthy();
-  //   })
-  //   let httpRequest = httpMock.expectOne(empService.emplUrl+"/"+dummyEmployees[0].id);
-  //   expect(httpRequest.request.method).toBe("DELETE");
-  //   httpRequest[0].flush(dummyEmployees);
-  //   httpMock.verify();
-  // });
-  
+  });  
 
 });

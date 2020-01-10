@@ -59,7 +59,6 @@ describe('EmployeeComponent', () => {
 
   it('check the length of drop down', () => {
     const fixture = TestBed.createComponent(EmployeeComponent);
-    const debugElement = fixture.debugElement;
     const matSelect = fixture.debugElement.query(By.css('mat-select')).nativeElement;
     expect(matSelect.childNodes.length).toBe(2);
     matSelect.click();

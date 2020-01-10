@@ -14,7 +14,6 @@ import { AddEmployeeComponent } from '../Update/addEmployee.component';
 import { EmployeeService } from './employee.service';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { Employee } from '../Model/employee.model';
-import { DebugElement } from '@angular/core';
 
 describe('EmployeeComponent', () => {
   let httpMock: HttpTestingController;
@@ -74,26 +73,6 @@ describe('EmployeeComponent', () => {
     //   expect(inputElement.innerHTML.length).toBeGreaterThan(0);
     // });
   });
-  // it('Selector should have the following', async() =>{
-  //   const fixture = TestBed.createComponent(EmployeeComponent);
-  //   fixture.detectChanges();
-  //   // const app = fixture.debugElement.nativeElement;
-  //   // //   expect(app).toBeTruthy();
-  //   // let htmlElement = fixture.debugElement.query(By.css('mat-select')).nativeElement;
-  //   // expect(htmlElement.childNodes.length).toEqual(2);
-    
-    
-  //   // htmlElement = fixture.debugElement.queryAll(By.css('mat-option-text'));
-  //   // expect(htmlElement.childNodes[0]).toContain('search by id');
-  //   const trigger = fixture.debugElement.query(By.css('.mat-select-trigger')).nativeElement;
-  //   trigger.click();
-  //   fixture.detectChanges();
-  //   await fixture.whenStable().then(() => {
-  //       const inquiryOptions = fixture.debugElement.queryAll(By.css('mat-option'));
-  //       expect(inquiryOptions.length).toEqual(3);
-  //   });
-  // })
-
   it('should test the table ', (done) => {
     let dummyEmployees: Employee[] = [
       {

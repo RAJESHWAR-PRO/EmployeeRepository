@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HomePageComponent } from './homepage.component';
 import { assertPlatform } from '@angular/core';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, By } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../Model/materialModule';
@@ -53,22 +53,28 @@ describe('HomeComponent', () => {
         const app = fixture.debugElement.componentInstance;
         expect(app).toBeTruthy();
     });
-    it('should display registration form after clicking first tab', async(() => {
+    it('should display create employee form at start', () => {
         const fixture = TestBed.createComponent(HomePageComponent);
-        const compiled = fixture.nativeElement;
-        compiled.querySelectorAll('mat-tab')[1];
+        const compiled = fixture.debugElement;
+        compiled.queryAll(By.css('mat-tab'))[0];
+        compiled.nativeElement.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect(compiled.querySelector('add-employee')).toBeTruthy();
+          compiled.query(By.css('add-employee'));
+          compiled.nativeElement;
+          expect(compiled).toBeTruthy();
         });
-    }));
-    it('should display employee list after clicking second tab', async(() => {
+      });
+    it('should display employee list after clicking second tab', () => {
         const fixture = TestBed.createComponent(HomePageComponent);
-        const compiled = fixture.nativeElement;
-        compiled.querySelectorAll('mat-tab')[1];
+        const compiled = fixture.debugElement;
+        compiled.queryAll(By.css('mat-tab'))[1];
+        compiled.nativeElement.click();
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-          expect(compiled.querySelector('employee-root')).toBeNull();
+          compiled.query(By.css('employee-root'));
+          compiled.nativeElement;
+          expect(compiled).toBeTruthy();
         });
-    }));
+    });
 });

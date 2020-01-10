@@ -62,7 +62,6 @@ describe('HomeComponent', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           compiled.query(By.css('add-employee'));
-          compiled.nativeElement;
           expect(compiled).toBeTruthy();
         });
       });
@@ -74,7 +73,6 @@ describe('HomeComponent', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
           compiled.query(By.css('employee-root'));
-          compiled.nativeElement;
           expect(compiled).toBeTruthy();
         });
     });

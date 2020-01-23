@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../Model/employee.model';
 import { EmployeeService } from '../Employee/employee.service';
-import { style } from '@angular/animations';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
@@ -18,8 +17,9 @@ export class AddEmployeeComponent implements OnInit{
   maritalStatus: string;
   empSalary: number;
   confirmation: boolean = false;
-
+  options: any[] = ['YES','NO'];
   empl : Employee = new Employee();
+  empl1: Employee[];
   constructor(private router:Router, private emplService:EmployeeService,private snackBar:MatSnackBar){
 
   }

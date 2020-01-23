@@ -25,7 +25,7 @@ export class EmployeeComponent implements OnInit{
   confirmation : boolean = false;
   sortedData : Employee[];
   empl1: Employee = new Employee();
-  type: string = null;
+  type: string = "by Id";
   displayedColumns: string[] = ['id','createdAt','updatedAt', 'empName', 'empAddress', 'empSalary','maritalStatus','Edit','Delete'];
   dataSource = new MatTableDataSource<Employee>();
   data : Employee[];

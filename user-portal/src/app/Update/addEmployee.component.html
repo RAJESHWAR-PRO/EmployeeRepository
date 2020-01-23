@@ -15,8 +15,8 @@
     <mat-form-field class="example-full-width">
         <mat-label>Status</mat-label>
         <mat-select [(ngModel)]="empl.maritalStatus" name="maritalStatus" required>
-            <mat-option value="YES">Yes</mat-option>
-            <mat-option value="NO">No</mat-option>
+            <mat-option  *ngFor="let o of options" [value]="o">{{o}}</mat-option>
+            <!-- <mat-option value="NO">No</mat-option> -->
         </mat-select>
     </mat-form-field>
 

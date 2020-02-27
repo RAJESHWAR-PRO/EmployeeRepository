@@ -7,7 +7,7 @@ Versions:
 
 1) Angular CLI: 8.3.21,
 2) Node: 12.14.0,
-3) SpringBoot: 1.5.9.
+3) SpringBoot - starter: 1.5.9.
 4) MySQL: 8.0
 
 Required dependencies:
